@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0">
+    <link href="StyleSheet.css" rel="stylesheet" />
+
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.caret.js"></script>
+    <script src="plugin.js"></script>
+</head>
+<body>
+    <div>
+        New figure: <input value="" id="new" class="money" />
+        <br />
+
+        Span: <span id="m7" class="money">701500.95</span> <br />
+
+        Preset:
+        <input value="250400.45" id="m1" class="money" />
+        <input value="4234324.56" id="m2" class="money" />
+        <input value="44343" id="m3" class="money" />
+        <input value="2434443.4" id="m4" class="money" />
+
+        <br />
+        hidden:
+        <input value="4324344.45" id="m5" class="hidmoney" />
+        <br />
+        show hide:
+        <input value="56889" id="m6" class="money" />
+
+        <br />
+
+        controls:<br />
+        <!--<input type="button" id="add" value="Add" />-->
+
+        <input type="button" id="show" value="Show" />
+        <input type="button" id="changeclass" value="change class" />
+        <input type="button" id="add2container" value="Add to container" />
+
+        <hr />
+        <br />
+
+        log from the html:<br />
+        <textarea id="log" rows="10" cols="50"></textarea>
+        <br />
+        log2 from the extended method:<br />
+        <textarea id="log2" rows="10" cols="50"></textarea>
+
+        container:<br />
+        <div id="container" class="container"></div>
+
+        Pre:<br />
+        <pre id="pre" class="container"></pre>
+
+
+        <input id="foo" type="button" value="custom foo"/>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //$("#foo").on("custom", function (event, param1, param2, p3) {
+        //    alert(param1 + "\n" + param2 +"\n"  + p3);
+        //});
+        ////$("#foo").on("click", function () {
+        //    $("#foo").trigger("custom", ["Custom", "Event", "4"]);
+        ////});
+
+
+
+        $("#changeclass").on("click", function () {
+            $(".hidmoney").addClass("money");
+        });
+
+        //$("#add").on("click", function () {
+        //    var template = $("<input  type='text' />").val($("#new").val()).addClass('money').wrap("pre");
+        //    $("body").append(template);
+        //    $("#container").append(template);
+        //});
+
+        $('#m6').hide();
+        $("#show").on("click", function () {
+            $("#m6").toggle();
+        });
+
+        //$("body").on("append", function (e) {
+        //    alert('this trigered' + e.target.id);
+        //});
+
+        //add to container
+        $("#add2container").on("click", function (e) {
+            //var template = $("<input  type='text' />").val($("#new").val()).addClass('money') ;
+            var template = $("<pre><span><input  type='text' value='549.00' class='money' /></span></pre>");
+            $("#container").append(template);
+            //alert(
+            //    template.prop('outerHTML')
+            //    );
+
+            //$("#log").append(template.prop('outerHTML'));
+            e.stopImmediatePropagation();
+        });
+
+        //$("body").on("click", function () { alert('body clicked'); });
+
+        //$("#new").on("keydown", function (e) {
+        //    alert(e.target.value);
+        //    e.preventDefault();
+        //    e.stopImmediatePropagation();
+        //    return false;
+        //});
+        //$("#new").on("keyup", function (e) {
+        //    alert(e.target.value);
+        //    e.preventDefault();
+        //    e.stopImmediatePropagation();
+        //    return false;
+        //});
+        //$("#new").on("keypress", function (e) {
+        //    alert(e.which);
+        //    return false;
+        //});
+    });
+</script>
+

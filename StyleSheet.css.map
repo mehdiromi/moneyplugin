@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "StyleSheet.css",
+  "sources": [
+    "StyleSheet.less"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACI,yBAAA;;AAEJ;EACG,wBAAA;;AAGH;EACI,+BAAA;EACA,YAAA;EACA,aAAA"
+}
